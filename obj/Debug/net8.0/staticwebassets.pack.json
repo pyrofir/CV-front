@@ -1,0 +1,45 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Samuel\\Desktop\\CV web\\CV-front\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\CV-front.bundle.scp.css",
+      "PackagePath": "staticwebassets\\CV-front.gesx4tlhc4.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\Samuel\\Desktop\\CV web\\CV-front\\wwwroot\\app.css",
+      "PackagePath": "staticwebassets\\app.css"
+    },
+    {
+      "Id": "C:\\Users\\Samuel\\Desktop\\CV web\\CV-front\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Samuel\\Desktop\\CV web\\CV-front\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Samuel\\Desktop\\CV web\\CV-front\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.CV-front.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.CV-front.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.CV-front.props",
+      "PackagePath": "build\\CV-front.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.CV-front.props",
+      "PackagePath": "buildMultiTargeting\\CV-front.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.CV-front.props",
+      "PackagePath": "buildTransitive\\CV-front.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
