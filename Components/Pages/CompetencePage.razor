@@ -1,0 +1,54 @@
+﻿@using CV_front.Models;
+@inject data.CvHttpClient Cv
+@page "/competence"
+
+
+
+<h3>Competences</h3>
+
+@if (Loading)
+{
+    <div class="alert alert-info"> Chargement... </div>
+}
+else
+{
+    <div class="alert alert-info"> @Competences.Count </div>
+    <div class="row">
+
+
+        @foreach (Competence comp in Competences)
+        {
+
+            <div class="col-4">
+                <h4>@comp.name</h4> | <h4>@comp.note</h4>
+            </div>
+
+        }
+    </div>
+}
+
+
+
+@code {
+    private bool Loading;
+    private List<Competence> Competences = new List<Competence>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadingCompetence();
+        await base.OnInitializedAsync();
+    }
+
+    private async Task LoadingCompetence()
+    {
+        if (Loading)
+        {
+            return;
+        }
+        Loading = true;
+
+        Competences = await Cv.GetAllCompetencesAsync();
+        Competences.Add(new Competence());
+        Loading = false;
+	}
+}
