@@ -1,10 +1,14 @@
 using CV_front.Components;
+using data;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
+
+
+builder.Services.AddHttpClient<CvHttpClient>(client => client.BaseAddress = new Uri(builder.Configuration.GetValue<string>("Parametres:APICv")));
 
 var app = builder.Build();
 
@@ -16,7 +20,7 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
 
 app.UseStaticFiles();
 app.UseAntiforgery();
