@@ -12,15 +12,18 @@
 }
 else
 {
-    <div class="alert alert-info"> @Competences.Count </div>
     <div class="row">
 
 
-        @foreach (Competence comp in Competences)
+        @foreach (SortCompetences Sortcomp in SortCompetences)
         {
 
             <div class="col-4">
-                <h4>@comp.name</h4> | <h4>@comp.note</h4>
+                <h3>@Sortcomp.Type</h3>
+                @foreach (Competence comp in Sortcomp.Competences)
+                {
+                    <h4>@comp.name | @comp.note</h4>
+                }
             </div>
 
         }
@@ -31,7 +34,7 @@ else
 
 @code {
     private bool Loading;
-    private List<Competence> Competences = new List<Competence>();
+    private List<SortCompetences> SortCompetences = new List<SortCompetences>();
 
     protected override async Task OnInitializedAsync()
     {
@@ -47,8 +50,7 @@ else
         }
         Loading = true;
 
-        Competences = await Cv.GetAllCompetencesAsync();
-        Competences.Add(new Competence());
+        SortCompetences = await Cv.GetAllSortCompetencesAsync();
         Loading = false;
-	}
+    }
 }

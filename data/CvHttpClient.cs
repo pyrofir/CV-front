@@ -27,5 +27,31 @@ namespace data
                 return new List<Competence>();
             }
         }
+
+
+        public async Task<List<SortCompetences>> GetAllSortCompetencesAsync()
+        {
+            try
+            {
+                return await _httpClient.GetFromJsonAsync<List<SortCompetences>>("CV/Competence/sort");
+            }
+            catch (Exception)
+            {
+                return new List<SortCompetences>();
+            }
+        }
+
+
+        public async Task<List<Formation>> GetAllFormationAsync() 
+        {
+            try
+            {
+                return await _httpClient.GetFromJsonAsync<List<Formation>>("CV/Formation");
+            }
+            catch (Exception) 
+            {
+                return new List<Formation>();
+            }
+        }
     }
 }
