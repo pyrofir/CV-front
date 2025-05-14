@@ -1,0 +1,49 @@
+﻿@inject data.CvHttpClient Cv
+@page "/formation"
+@using CV_front.Models
+
+<h3>Formation</h3>
+
+
+@if (Loading)
+{
+    <div class="alert alert-info"> Chargement... </div>
+}
+else
+{
+    <div class="row">
+
+
+        @foreach (Formation form in formation)
+        {
+
+            <div class="col-4">
+                <h2>@form.ecole</h2> -> <h3> @form.specialisation </h3> || @form.dates <div> @form.description </div>
+            </div>
+
+        }
+    </div>
+}
+
+@code {
+    private bool Loading;
+    private List<Formation> formation = new List<Formation>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadingFormation();
+        await base.OnInitializedAsync();
+    }
+
+    private async Task LoadingFormation()
+    {
+        if (Loading)
+        {
+            return;
+        }
+        Loading = true;
+
+        formation = await Cv.GetAllFormationAsync();
+        Loading = false;
+    }
+}
