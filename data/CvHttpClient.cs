@@ -53,5 +53,17 @@ namespace data
                 return new List<Formation>();
             }
         }
+
+        public async Task<List<FullExperiences>> GetAllExperiencesAsync() 
+        {
+            try
+            {
+                return await _httpClient.GetFromJsonAsync<List<FullExperiences>>("CV/Experiences");
+            }
+            catch 
+            {
+                return new List<FullExperiences>();
+            }
+        }
     }
 }

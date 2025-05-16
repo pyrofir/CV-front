@@ -1,0 +1,79 @@
+﻿@using CV_front.Models;
+@inject data.CvHttpClient Cv
+@page "/experiences"
+
+<h3>Experiences</h3>
+
+
+@if (Loading)
+{
+    <div class="alert alert-info"> Chargement... </div>
+}
+else
+{
+    <div class="row">
+
+        @foreach (FullExperiences exp in FullExperiences)
+        {
+
+            <div>-----------------------------------------------------
+                <div class="col-4">
+                    <h2>@exp.experiences.poste | @exp.experiences.societe | @exp.experiences.date | @exp.experiences.duree |@exp.experiences.type | @exp.experiences.site_web | @exp.experiences.type_de_societe | @exp.type</h2>
+                </div>
+                <div class="col-4">
+                    @exp.experiences.context
+                </div>
+                <div class="col-4">
+                    @exp.experiences.objectif
+                </div>
+
+                <div class="col-4">
+                    taches
+                    @foreach (TacheExperience taches in exp.taches)
+                    {
+                        <div class="col-4">
+                            @taches.tache
+                        </div>
+                    }
+                </div>
+
+                <div class="col-4">
+                    @exp.experiences.resultat
+                </div>
+                @foreach (Competence comp in exp.competences)
+                {
+                    <div class="col-4">
+                        @comp.name
+                    </div>
+                }
+
+        ------------------------------------------------------
+         </div>
+
+    }
+    </div>
+}
+
+
+@code {
+    private bool Loading;
+    private List<FullExperiences> FullExperiences = new List<FullExperiences>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadingExperiences();
+        await base.OnInitializedAsync();
+    }
+
+    private async Task LoadingExperiences()
+    {
+        if (Loading)
+        {
+            return;
+        }
+        Loading = true;
+
+        FullExperiences = await Cv.GetAllExperiencesAsync();
+        Loading = false;
+    }
+}
