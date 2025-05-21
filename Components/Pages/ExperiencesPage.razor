@@ -2,7 +2,7 @@
 @inject data.CvHttpClient Cv
 @page "/experiences"
 
-<h3>Experiences</h3>
+
 
 
 @if (Loading)
@@ -11,44 +11,65 @@
 }
 else
 {
-    <div class="row">
+    <div class="row" style="padding-top: 100px;">
+
+
+
+        
+    
+
+
+
+
+
 
         @foreach (FullExperiences exp in FullExperiences)
         {
-
-            <div>-----------------------------------------------------
-                <div class="col-4">
-                    <h2>@exp.experiences.poste | @exp.experiences.societe | @exp.experiences.date | @exp.experiences.duree |@exp.experiences.type | @exp.experiences.site_web | @exp.experiences.type_de_societe | @exp.type</h2>
-                </div>
-                <div class="col-4">
-                    @exp.experiences.context
-                </div>
-                <div class="col-4">
-                    @exp.experiences.objectif
-                </div>
-
-                <div class="col-4">
-                    taches
-                    @foreach (TacheExperience taches in exp.taches)
-                    {
-                        <div class="col-4">
-                            @taches.tache
-                        </div>
-                    }
-                </div>
-
-                <div class="col-4">
-                    @exp.experiences.resultat
-                </div>
-                @foreach (Competence comp in exp.competences)
-                {
-                    <div class="col-4">
-                        @comp.name
+            <div class="col-lg-12">
+                <blockquote class="generic-blockquote">
+                    <div class="typography">
+                        <h1>@exp.experiences.poste</h1>
+                        <h3>@exp.experiences.societe</h3>
+                        <h4>@exp.type</h4>
+                        <h6>@exp.experiences.date @exp.experiences.duree</h6>
+                        <h6>@exp.experiences.type @exp.experiences.site_web @exp.experiences.type_de_societe</h6>
                     </div>
-                }
+                    <h3 class="mb-20">Contextes</h3>
+                    <blockquote class="generic-blockquote">
+                        @exp.experiences.context
+                    </blockquote>
+                    <h3 class="mb-20">Objectif</h3>
+                    <blockquote class="generic-blockquote">
+                        @exp.experiences.objectif
+                    </blockquote>
+                    <h3 class="mb-20">Taches</h3>
+                    <div class="">
+                        <ul class="unordered-list">
+                            @foreach (TacheExperience taches in exp.taches)
+                            {
+                                <li>
+                                    @taches.tache
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                    <h3 class="mb-20">Résultats</h3>
+                    <blockquote class="generic-blockquote">
+                        @exp.experiences.resultat
+                    </blockquote>
+                    <h3 class="mb-20">Compétences</h3>
+                    <div class="">
+                        @foreach (Competence comp in exp.competences)
+                        {
+                            <li>
+                                @comp.name
+                            </li>
+                        }
+                    </div>
+                </blockquote>
+            </div>
 
-        ------------------------------------------------------
-         </div>
+            
 
     }
     </div>
