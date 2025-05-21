@@ -2,7 +2,6 @@
 @page "/formation"
 @using CV_front.Models
 
-<h3>Formation</h3>
 
 
 @if (Loading)
@@ -11,15 +10,46 @@
 }
 else
 {
-    <div class="row">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="row" style="padding-top: 100px;">
 
 
         @foreach (Formation form in formation)
         {
+            <div class="section-top-border">
 
-            <div class="col-4">
-                <h2>@form.ecole</h2> -> <h3> @form.specialisation </h3> || @form.dates <div> @form.description </div>
+                
+                <div class="col-lg-12">
+                    <blockquote class="generic-blockquote">
+                        <div class="typography">
+							<h1>@form.ecole</h1>
+                            <h3>@form.specialisation</h3>
+                            <h6>@form.dates</h6>
+                        </div>
+                        @form.description
+                    </blockquote>
+                </div>
             </div>
+            
+            
 
         }
     </div>

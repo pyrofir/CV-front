@@ -4,7 +4,8 @@
 
 
 
-<h3>Competences</h3>
+
+
 
 @if (Loading)
 {
@@ -15,15 +16,87 @@ else
     <div class="row">
 
 
+
+
+
+
+
         @foreach (SortCompetences Sortcomp in SortCompetences)
         {
+            <div class="download_area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-10">
+                            <div class="download_text">
+                                <h3>@Sortcomp.Type </h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
 
-            <div class="col-4">
-                <h3>@Sortcomp.Type</h3>
-                @foreach (Competence comp in Sortcomp.Competences)
-                {
-                    <h4>@comp.name | @comp.note</h4>
-                }
+
+
+
+
+
+                        @SetCount()
+                        <div class="col-lg-6 col-md-6">
+                            @foreach (Competence comp in Sortcomp.Competences)
+                            {
+
+
+
+
+                                @if (GetHalf(Sortcomp) > Count)
+                                {
+
+
+                                    <div class="progress_skills">
+                                        <div class="single_progress">
+                                            <div class="label d-flex justify-content-between">
+                                                <span>@comp.name</span>
+                                                <span>@GetNote(comp)%</span>
+                                            </div>
+                                            <div class="progress">
+                                                <div class="progress-bar " role="progressbar" style="width: @GetNote(comp)%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                }
+
+                                @addCount()
+                            }
+                            @SetCount()
+                        </div>
+                        <div class="col-lg-5 offset-lg-1 col-md-6">
+                            @foreach (Competence comp in Sortcomp.Competences)
+                            {
+                                @if (GetHalf(Sortcomp) <= Count)
+                                {
+
+
+                                    <div class="progress_skills">
+                                        <div class="single_progress">
+                                            <div class="label d-flex justify-content-between">
+                                                <span>@comp.name</span>
+                                                <span>@GetNote(comp)%</span>
+                                            </div>
+                                            <div class="progress">
+                                                <div class="progress-bar " role="progressbar" style="width: @GetNote(comp)%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                }
+
+                                @addCount()
+                            }
+                            
+                        </div>
+                    </div>
+
+                </div>
             </div>
 
         }
@@ -35,6 +108,35 @@ else
 @code {
     private bool Loading;
     private List<SortCompetences> SortCompetences = new List<SortCompetences>();
+    private int Count;
+
+    protected string SetCount()
+    {
+        Count = 0;
+        return "";
+    }
+
+
+    protected int GetNote(Competence comp)
+    {
+        return comp.note * 10;
+    }
+
+    protected string addCount()
+    {
+        Count = Count + 1;
+        return "";
+    }
+
+    protected int GetHalf(SortCompetences comp)
+    {
+        int n = comp.Competences.Count();
+        if(n == 1)
+        {
+            return n;
+        }
+        return n / 2;
+    }
 
     protected override async Task OnInitializedAsync()
     {
