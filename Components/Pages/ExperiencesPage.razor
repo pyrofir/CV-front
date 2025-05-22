@@ -11,7 +11,20 @@
 }
 else
 {
-    <div class="row" style="padding-top: 100px;">
+
+
+    <div class="bradcam_area bradcam_bg_1">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="bradcam_text text-center">
+                        <h3>Projets</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
 
 
 
@@ -58,14 +71,14 @@ else
                         @exp.experiences.resultat
                     </blockquote>
                     <h3 class="mb-20">Compétences</h3>
-                    <div class="">
+                    <ul class="unordered-list">
                         @foreach (Competence comp in exp.competences)
                         {
                             <li>
                                 @comp.name
                             </li>
                         }
-                    </div>
+                    </ul>
                 </blockquote>
             </div>
 
