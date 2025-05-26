@@ -3,7 +3,7 @@
 @page "/competence"
 
 
-
+<!--Page d'affichage des competences-->
 
 
 
@@ -13,7 +13,7 @@
 }
 else
 {
-
+    <!--Titre de la page-->
     <div class="bradcam_area bradcam_bg_1">
         <div class="container">
             <div class="row">
@@ -37,6 +37,8 @@ else
 
         @foreach (SortCompetences Sortcomp in SortCompetences)
         {
+
+            <!--Tableau d'affichage des compétences-->
             <div class="download_area">
                 <div class="container">
                     <div class="row">
@@ -124,13 +126,15 @@ else
     private List<SortCompetences> SortCompetences = new List<SortCompetences>();
     private int Count;
 
+
+    // SetCount addCount GetHalf sont utiliser pour afficher la liste de compétences sur 2 colonnes
     protected string SetCount()
     {
         Count = 0;
         return "";
     }
 
-
+    // Transforme la note en %
     protected int GetNote(Competence comp)
     {
         return comp.note * 10;
@@ -152,6 +156,8 @@ else
         return n / 2;
     }
 
+
+    //appel l'API à l'init de la page
     protected override async Task OnInitializedAsync()
     {
         await LoadingCompetence();
