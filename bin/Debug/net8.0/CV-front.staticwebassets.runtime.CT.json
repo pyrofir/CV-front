@@ -175,6 +175,14 @@
             },
             "Patterns": null
           },
+          "mine.css": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "css/mine.css"
+            },
+            "Patterns": null
+          },
           "nice-select.css": {
             "Children": null,
             "Asset": {
@@ -265,6 +273,28 @@
           "ContentRootIndex": 0,
           "SubPath": "favicon.png"
         },
+        "Patterns": null
+      },
+      "fichiers": {
+        "Children": {
+          "CV Samuel ISRAEL.pdf": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "fichiers/CV Samuel ISRAEL.pdf"
+            },
+            "Patterns": null
+          },
+          "Lettre de recommandation.pdf": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "fichiers/Lettre de recommandation.pdf"
+            },
+            "Patterns": null
+          }
+        },
+        "Asset": null,
         "Patterns": null
       },
       "fonts": {
@@ -1161,6 +1191,116 @@
               "ContentRootIndex": 0,
               "SubPath": "img/logo.png"
             },
+            "Patterns": null
+          },
+          "mine": {
+            "Children": {
+              "back.png": {
+                "Children": null,
+                "Asset": {
+                  "ContentRootIndex": 0,
+                  "SubPath": "img/mine/back.png"
+                },
+                "Patterns": null
+              },
+              "bdd.png": {
+                "Children": null,
+                "Asset": {
+                  "ContentRootIndex": 0,
+                  "SubPath": "img/mine/bdd.png"
+                },
+                "Patterns": null
+              },
+              "cloud.png": {
+                "Children": null,
+                "Asset": {
+                  "ContentRootIndex": 0,
+                  "SubPath": "img/mine/cloud.png"
+                },
+                "Patterns": null
+              },
+              "competences.png": {
+                "Children": null,
+                "Asset": {
+                  "ContentRootIndex": 0,
+                  "SubPath": "img/mine/competences.png"
+                },
+                "Patterns": null
+              },
+              "contacte-2.png": {
+                "Children": null,
+                "Asset": {
+                  "ContentRootIndex": 0,
+                  "SubPath": "img/mine/contacte-2.png"
+                },
+                "Patterns": null
+              },
+              "contacte.png": {
+                "Children": null,
+                "Asset": {
+                  "ContentRootIndex": 0,
+                  "SubPath": "img/mine/contacte.png"
+                },
+                "Patterns": null
+              },
+              "formation-2.png": {
+                "Children": null,
+                "Asset": {
+                  "ContentRootIndex": 0,
+                  "SubPath": "img/mine/formation-2.png"
+                },
+                "Patterns": null
+              },
+              "formation.png": {
+                "Children": null,
+                "Asset": {
+                  "ContentRootIndex": 0,
+                  "SubPath": "img/mine/formation.png"
+                },
+                "Patterns": null
+              },
+              "front.png": {
+                "Children": null,
+                "Asset": {
+                  "ContentRootIndex": 0,
+                  "SubPath": "img/mine/front.png"
+                },
+                "Patterns": null
+              },
+              "github.png": {
+                "Children": null,
+                "Asset": {
+                  "ContentRootIndex": 0,
+                  "SubPath": "img/mine/github.png"
+                },
+                "Patterns": null
+              },
+              "home.png": {
+                "Children": null,
+                "Asset": {
+                  "ContentRootIndex": 0,
+                  "SubPath": "img/mine/home.png"
+                },
+                "Patterns": null
+              },
+              "projet.png": {
+                "Children": null,
+                "Asset": {
+                  "ContentRootIndex": 0,
+                  "SubPath": "img/mine/projet.png"
+                },
+                "Patterns": null
+              },
+              "sam.png": {
+                "Children": null,
+                "Asset": {
+                  "ContentRootIndex": 0,
+                  "SubPath": "img/mine/sam.png"
+                },
+                "Patterns": null
+              }
+            },
+            "Asset": null,
             "Patterns": null
           },
           "post": {

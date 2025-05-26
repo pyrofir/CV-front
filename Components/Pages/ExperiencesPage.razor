@@ -29,7 +29,53 @@ else
 
 
         
-    
+        <div class="col-lg-12">
+            <blockquote class="generic-blockquote">
+                <div class="typography">
+                    <h1 >Développeur Full Stack</h1>
+                    <h3 >OpenAI Corp</h3>
+                    <h4 >Stage</h4>
+                    <h6 >Janvier 2023 - Juin 2023 (6 mois)</h6>
+                    <h6 >Télétravail | www.openai.com | Startup IA</h6>
+                </div>
+
+                <details class="custom-details">
+                    <summary>Voir plus</summary>
+
+                    <h3 class="mb-20 color-summary">Contextes</h3>
+                    <blockquote class="generic-blockquote color-text">
+                        Projet de plateforme de démonstration d’un assistant IA intégré à un site d'entreprise.
+                    </blockquote>
+
+                    <h3 class="mb-20 color-summary">Objectif</h3>
+                    <blockquote class="generic-blockquote color-text">
+                        Mettre en œuvre un site complet en Blazor hybride, hébergé sur un serveur Docker, interagissant avec des API GPT.
+                    </blockquote>
+
+                    <h3 class="mb-20 color-summary">Tâches</h3>
+                    <ul class="unordered-list">
+                        <li>Création d’une architecture Blazor Server + WebAssembly</li>
+                        <li>Déploiement Docker avec Nginx reverse proxy</li>
+                        <li>Connexion aux API GPT-4</li>
+                        <li>Responsive design et compatibilité cross-browser</li>
+                    </ul>
+
+                    <h3 class="mb-20 color-summary">Résultats</h3>
+                    <blockquote class="generic-blockquote color-text">
+                        Mise en ligne réussie d'une démo publique, utilisée comme vitrine interne.
+                    </blockquote>
+
+                    <h3 class="mb-20 color-summary">Compétences</h3>
+                    <ul class="unordered-list">
+                        <li>Blazor</li>
+                        <li>Docker</li>
+                        <li>API REST</li>
+                        <li>C#</li>
+                        <li>CSS & Responsive Design</li>
+                    </ul>
+                </details>
+            </blockquote>
+        </div>
 
 
 
@@ -38,6 +84,7 @@ else
 
         @foreach (FullExperiences exp in FullExperiences)
         {
+
             <div class="col-lg-12">
                 <blockquote class="generic-blockquote">
                     <div class="typography">
@@ -47,16 +94,21 @@ else
                         <h6>@exp.experiences.date @exp.experiences.duree</h6>
                         <h6>@exp.experiences.type @exp.experiences.site_web @exp.experiences.type_de_societe</h6>
                     </div>
-                    <h3 class="mb-20">Contextes</h3>
-                    <blockquote class="generic-blockquote">
-                        @exp.experiences.context
-                    </blockquote>
-                    <h3 class="mb-20">Objectif</h3>
-                    <blockquote class="generic-blockquote">
-                        @exp.experiences.objectif
-                    </blockquote>
-                    <h3 class="mb-20">Taches</h3>
-                    <div class="">
+
+                    <details class="custom-details">
+                        <summary>Voir plus</summary>
+
+                        <h3 class="mb-20 color-summary">Contextes</h3>
+                        <blockquote class="generic-blockquote color-text">
+                            @exp.experiences.context
+                        </blockquote>
+
+                        <h3 class="mb-20 color-summary">Objectif</h3>
+                        <blockquote class="generic-blockquote color-text">
+                            @exp.experiences.objectif
+                        </blockquote>
+
+                        <h3 class="mb-20 color-summary">Tâches</h3>
                         <ul class="unordered-list">
                             @foreach (TacheExperience taches in exp.taches)
                             {
@@ -65,20 +117,22 @@ else
                                 </li>
                             }
                         </ul>
-                    </div>
-                    <h3 class="mb-20">Résultats</h3>
-                    <blockquote class="generic-blockquote">
-                        @exp.experiences.resultat
-                    </blockquote>
-                    <h3 class="mb-20">Compétences</h3>
-                    <ul class="unordered-list">
-                        @foreach (Competence comp in exp.competences)
-                        {
-                            <li>
-                                @comp.name
-                            </li>
-                        }
-                    </ul>
+
+                        <h3 class="mb-20 color-summary">Résultats</h3>
+                        <blockquote class="generic-blockquote color-text">
+                            @exp.experiences.resultat
+                        </blockquote>
+
+                        <h3 class="mb-20 color-summary">Compétences</h3>
+                        <ul class="unordered-list">
+                            @foreach (Competence comp in exp.competences)
+                            {
+                                <li>
+                                    @comp.name
+                                </li>
+                            }
+                        </ul>
+                    </details>
                 </blockquote>
             </div>
 

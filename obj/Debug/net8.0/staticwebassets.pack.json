@@ -77,6 +77,10 @@
       "PackagePath": "staticwebassets\\css\\magnific-popup.css"
     },
     {
+      "Id": "C:\\Users\\Samuel\\Desktop\\CV web\\CV-front\\wwwroot\\css\\mine.css",
+      "PackagePath": "staticwebassets\\css\\mine.css"
+    },
+    {
       "Id": "C:\\Users\\Samuel\\Desktop\\CV web\\CV-front\\wwwroot\\css\\nice-select.css",
       "PackagePath": "staticwebassets\\css\\nice-select.css"
     },
@@ -119,6 +123,14 @@
     {
       "Id": "C:\\Users\\Samuel\\Desktop\\CV web\\CV-front\\wwwroot\\favicon.png",
       "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "C:\\Users\\Samuel\\Desktop\\CV web\\CV-front\\wwwroot\\fichiers\\CV Samuel ISRAEL.pdf",
+      "PackagePath": "staticwebassets\\fichiers\\CV Samuel ISRAEL.pdf"
+    },
+    {
+      "Id": "C:\\Users\\Samuel\\Desktop\\CV web\\CV-front\\wwwroot\\fichiers\\Lettre de recommandation.pdf",
+      "PackagePath": "staticwebassets\\fichiers\\Lettre de recommandation.pdf"
     },
     {
       "Id": "C:\\Users\\Samuel\\Desktop\\CV web\\CV-front\\wwwroot\\fonts\\Flaticon.eot",
@@ -539,6 +551,58 @@
     {
       "Id": "C:\\Users\\Samuel\\Desktop\\CV web\\CV-front\\wwwroot\\img\\logo.png",
       "PackagePath": "staticwebassets\\img\\logo.png"
+    },
+    {
+      "Id": "C:\\Users\\Samuel\\Desktop\\CV web\\CV-front\\wwwroot\\img\\mine\\back.png",
+      "PackagePath": "staticwebassets\\img\\mine\\back.png"
+    },
+    {
+      "Id": "C:\\Users\\Samuel\\Desktop\\CV web\\CV-front\\wwwroot\\img\\mine\\bdd.png",
+      "PackagePath": "staticwebassets\\img\\mine\\bdd.png"
+    },
+    {
+      "Id": "C:\\Users\\Samuel\\Desktop\\CV web\\CV-front\\wwwroot\\img\\mine\\cloud.png",
+      "PackagePath": "staticwebassets\\img\\mine\\cloud.png"
+    },
+    {
+      "Id": "C:\\Users\\Samuel\\Desktop\\CV web\\CV-front\\wwwroot\\img\\mine\\competences.png",
+      "PackagePath": "staticwebassets\\img\\mine\\competences.png"
+    },
+    {
+      "Id": "C:\\Users\\Samuel\\Desktop\\CV web\\CV-front\\wwwroot\\img\\mine\\contacte-2.png",
+      "PackagePath": "staticwebassets\\img\\mine\\contacte-2.png"
+    },
+    {
+      "Id": "C:\\Users\\Samuel\\Desktop\\CV web\\CV-front\\wwwroot\\img\\mine\\contacte.png",
+      "PackagePath": "staticwebassets\\img\\mine\\contacte.png"
+    },
+    {
+      "Id": "C:\\Users\\Samuel\\Desktop\\CV web\\CV-front\\wwwroot\\img\\mine\\formation-2.png",
+      "PackagePath": "staticwebassets\\img\\mine\\formation-2.png"
+    },
+    {
+      "Id": "C:\\Users\\Samuel\\Desktop\\CV web\\CV-front\\wwwroot\\img\\mine\\formation.png",
+      "PackagePath": "staticwebassets\\img\\mine\\formation.png"
+    },
+    {
+      "Id": "C:\\Users\\Samuel\\Desktop\\CV web\\CV-front\\wwwroot\\img\\mine\\front.png",
+      "PackagePath": "staticwebassets\\img\\mine\\front.png"
+    },
+    {
+      "Id": "C:\\Users\\Samuel\\Desktop\\CV web\\CV-front\\wwwroot\\img\\mine\\github.png",
+      "PackagePath": "staticwebassets\\img\\mine\\github.png"
+    },
+    {
+      "Id": "C:\\Users\\Samuel\\Desktop\\CV web\\CV-front\\wwwroot\\img\\mine\\home.png",
+      "PackagePath": "staticwebassets\\img\\mine\\home.png"
+    },
+    {
+      "Id": "C:\\Users\\Samuel\\Desktop\\CV web\\CV-front\\wwwroot\\img\\mine\\projet.png",
+      "PackagePath": "staticwebassets\\img\\mine\\projet.png"
+    },
+    {
+      "Id": "C:\\Users\\Samuel\\Desktop\\CV web\\CV-front\\wwwroot\\img\\mine\\sam.png",
+      "PackagePath": "staticwebassets\\img\\mine\\sam.png"
     },
     {
       "Id": "C:\\Users\\Samuel\\Desktop\\CV web\\CV-front\\wwwroot\\img\\post\\next.png",

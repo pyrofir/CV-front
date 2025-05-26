@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CV-front")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+33943a54d9484a1a877c97b5534ef6c7fd1199f6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9e1ab1bc597e80786e7aa6d9f18142aba4a9f94c")]
 [assembly: System.Reflection.AssemblyProductAttribute("CV-front")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CV-front")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

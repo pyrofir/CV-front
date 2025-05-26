@@ -1,0 +1,175 @@
+﻿.responsive-image {
+    height: 20px; /* ajuste selon la taille de ta barre */
+    width: auto;
+    display: inline-block;
+    vertical-align: middle; /* aligne bien avec le texte */
+    vertical-align: -2px;
+}
+
+.responsive-image-medium {
+    max-width: 25%; /* s'adapte à la largeur du parent */
+    height: auto; /* conserve les proportions */
+    display: block;
+    margin: 0 auto; /* centre horizontalement */
+    vertical-align: middle;
+}
+
+.responsive-big-image {
+    max-width: 100%; /* s'adapte à la largeur du parent */
+    height: auto; /* conserve les proportions */
+    display: block; /* ou inline-block selon ton usage */
+}
+
+.invert-colors {
+    filter: invert(1) grayscale(1);
+}
+
+
+.nav-link {
+    display: flex;
+    align-items: center; /* centre verticalement */
+    gap: 6px; /* espace entre image et texte */
+    padding: 8px 12px; /* ajustable selon ta navbar */
+}
+
+.cards-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* centre les cards sur chaque ligne */
+    gap: 20px;
+}
+
+
+.site-info {
+    width: 200px;
+    height: auto;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.site-info-container {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.slider_image-container {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 80%; /* ← prend presque tout l'espace */
+    max-width: 700px; /* ← très grande sur grand écran */
+    z-index: 1;
+    opacity: 0.95; /* ← facultatif : laisser transparaître un peu */
+    pointer-events: none; /* ← image ne bloque pas les clics */
+}
+
+    .slider_image-container img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+/* S'assurer que le texte reste bien par-dessus */
+.slider_text {
+    position: relative;
+    z-index: 2;
+}
+
+.read {
+    background: rgba(0, 0, 0, 0.5); /* fond noir transparent */
+    padding: 20px 30px;
+    border-radius: 10px;
+    max-width: 90%;
+    backdrop-filter: blur(3px); /* flou sur les éléments derrière */
+}
+
+    /* Texte plus serré */
+    .slider_text h3 {
+        font-size: 56px; /* ← un peu plus grand pour compenser */
+        line-height: 1.05;
+        margin-bottom: 10px;
+    }
+
+        .slider_text h3 span {
+            display: block;
+            font-size: 42px;
+            color: #f0a24e;
+        }
+
+/* Sur mobile : texte et image ajustés */
+@media (max-width: 768px) {
+    .slider_text h3 {
+        font-size: 28px;
+        line-height: 1.2;
+    }
+
+        .slider_text h3 span {
+            font-size: 22px;
+        }
+
+    .slider_image-container {
+        width: 90%;
+        max-width: 400px;
+        right: 50%;
+        transform: translateX(50%);
+        bottom: -10px;
+    }
+}
+
+
+
+.hover-bordered {
+    border: 1px solid transparent;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    overflow: visible;
+}
+
+    /* Effet visible uniquement au survol */
+    .hover-bordered:hover {
+        border: 1px solid #DB9A64;
+        box-shadow: 0 8px 20px rgba(219, 154, 100, 0.3);
+        transform: translateY(-5px);
+    }
+
+
+.custom-details {
+    margin-top: 1em;
+    border: 1px solid #DB9A64;
+    border-radius: 6px;
+    padding: 0.7em;
+    background-color: #1a1a1a;
+    color: white; /* <<< tout le texte devient blanc */
+    transition: all 0.3s ease;
+}
+
+    .custom-details summary {
+        cursor: pointer;
+        font-weight: bold;
+        color: #DB9A64;
+    }
+
+    .custom-details[open] summary::after {
+        content: " ▲";
+    }
+
+    .custom-details summary::after {
+        content: " ▼";
+    }
+
+
+.color-summary {
+    color: #DB9A64;
+}
+
+.color-text {
+    color: black;
+}

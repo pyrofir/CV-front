@@ -16,6 +16,7 @@ wwwroot\css\font-awesome.min.css
 wwwroot\css\gijgo.css
 wwwroot\css\jquery-ui.css
 wwwroot\css\magnific-popup.css
+wwwroot\css\mine.css
 wwwroot\css\nice-select.css
 wwwroot\css\owl.carousel.min.css
 wwwroot\css\slick.css
@@ -27,6 +28,8 @@ wwwroot\css\theme-default.css
 wwwroot\css\theme-default.map
 wwwroot\css\themify-icons.css
 wwwroot\favicon.png
+wwwroot\fichiers\CV Samuel ISRAEL.pdf
+wwwroot\fichiers\Lettre de recommandation.pdf
 wwwroot\fonts\fa-brands-400.eot
 wwwroot\fonts\fa-brands-400.svg
 wwwroot\fonts\fa-brands-400.ttf
@@ -132,6 +135,19 @@ wwwroot\img\gallery\3.png
 wwwroot\img\gallery\4.png
 wwwroot\img\gallery\works_banner.png
 wwwroot\img\logo.png
+wwwroot\img\mine\back.png
+wwwroot\img\mine\bdd.png
+wwwroot\img\mine\cloud.png
+wwwroot\img\mine\competences.png
+wwwroot\img\mine\contacte.png
+wwwroot\img\mine\contacte-2.png
+wwwroot\img\mine\formation.png
+wwwroot\img\mine\formation-2.png
+wwwroot\img\mine\front.png
+wwwroot\img\mine\github.png
+wwwroot\img\mine\home.png
+wwwroot\img\mine\projet.png
+wwwroot\img\mine\sam.png
 wwwroot\img\post\next.png
 wwwroot\img\post\post_1.png
 wwwroot\img\post\post_10.png
