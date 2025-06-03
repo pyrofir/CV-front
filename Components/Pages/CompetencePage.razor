@@ -3,6 +3,7 @@
 @page "/competence"
 
 
+
 <!--Page d'affichage des competences-->
 
 
@@ -65,20 +66,21 @@ else
 
                                 @if (GetHalf(Sortcomp) > Count)
                                 {
-
-
-                                    <div class="progress_skills">
-                                        <div class="single_progress">
-                                            <div class="label d-flex justify-content-between">
-                                                <span>@comp.name</span>
-                                                <span>@GetNote(comp)%</span>
+                                    
+                                    <NavLink href="@($"/experiences?competenceId={comp.id}")">
+                                        <div class="progress_skills competence-border">
+                                            <div class="single_progress">
+                                                <div class="label d-flex justify-content-between">
+                                                    <span>@comp.name</span>
+                                                    <span>@GetNote(comp)%</span>
+                                                </div>
+                                                <div class="progress">
+                                                    <div class="progress-bar " role="progressbar" style="width: @GetNote(comp)%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
                                             </div>
-                                            <div class="progress">
-                                                <div class="progress-bar " role="progressbar" style="width: @GetNote(comp)%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
+
                                         </div>
-
-                                    </div>
+										</NavLink>
                                 }
 
                                 @addCount()
@@ -91,19 +93,20 @@ else
                                 @if (GetHalf(Sortcomp) <= Count)
                                 {
 
+                                    <NavLink href="@($"/experiences?competenceId={comp.id}")">
+                                        <div class="progress_skills competence-border">
+                                            <div class="single_progress">
+                                                <div class="label d-flex justify-content-between">
+                                                    <span>@comp.name</span>
+                                                    <span>@GetNote(comp)%</span>
+                                                </div>
+                                                <div class="progress">
+                                                    <div class="progress-bar " role="progressbar" style="width: @GetNote(comp)%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
 
-                                    <div class="progress_skills">
-                                        <div class="single_progress">
-                                            <div class="label d-flex justify-content-between">
-                                                <span>@comp.name</span>
-                                                <span>@GetNote(comp)%</span>
-                                            </div>
-                                            <div class="progress">
-                                                <div class="progress-bar " role="progressbar" style="width: @GetNote(comp)%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
                                         </div>
-
-                                    </div>
+                                    </NavLink>
                                 }
 
                                 @addCount()

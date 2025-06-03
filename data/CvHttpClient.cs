@@ -65,5 +65,20 @@ namespace data
                 return new List<FullExperiences>();
             }
         }
+
+        public async Task<List<FullExperiences>> GetExperiencesByCompetence(int Competence)
+        {
+            try
+            {
+                // On ajoute le paramètre dans l'URL de l'API
+                string url = $"CV/Experiences/{Competence}";
+                return await _httpClient.GetFromJsonAsync<List<FullExperiences>>(url);
+            }
+            catch
+            {
+                return new List<FullExperiences>();
+            }
+        }
+
     }
 }

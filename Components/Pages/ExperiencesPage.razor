@@ -1,7 +1,10 @@
-﻿@using CV_front.Models;
+﻿@rendermode InteractiveServer
+@using CV_front.Models;
+@using Blazored.Typeahead
+@inject NavigationManager Nav
+@using Microsoft.AspNetCore.WebUtilities
 @inject data.CvHttpClient Cv
 @page "/experiences"
-
 
 
 
@@ -28,10 +31,20 @@ else
 
 
 
-        
-        
 
 
+        <!-- Barre de recherche -->
+        <select class="form-control" @bind="selectedCompetenceId">
+            <option value="">-- Sélectionner une compétence --</option>
+            @foreach (var comp in allCompetences)
+            {
+                <option value="@comp.id">@comp.name</option>
+            }
+        </select>
+        <div class="d-flex justify-content-center gap-2 mt-2 mb-4">
+            <button class="btn btn-primary w-100" style="max-width: 200px;" @onclick="OnSearch">Rechercher</button>
+            <button class="btn btn-secondary w-100" style="max-width: 200px;" @onclick="Clear">Clear</button>
+        </div>
 
 
 
@@ -89,22 +102,65 @@ else
                 </blockquote>
             </div>
 
-            
 
-    }
+
+        }
     </div>
 }
 
 
 @code {
+    private int? competenceId;
     private bool Loading;
     private List<FullExperiences> FullExperiences = new List<FullExperiences>();
+    private Competence selectedCompetence;
+    private List<Competence> allCompetences = new();
+    private int? selectedCompetenceId;
 
     //appel l'API à l'init de la page
     protected override async Task OnInitializedAsync()
     {
-        await LoadingExperiences();
+        Console.WriteLine("////////////////////////////////////////////////////////////////////////////LAunch");
         await base.OnInitializedAsync();
+        await LoadingCompetences();
+        var uri = Nav.ToAbsoluteUri(Nav.Uri);
+        if (QueryHelpers.ParseQuery(uri.Query).TryGetValue("competenceId", out var idStr))
+        {
+            Console.WriteLine("******************************************************************************************dans la boucle");
+
+            if (int.TryParse(idStr, out var id))
+            {
+                Console.WriteLine("============================================================================================================rentre dans le onsearch");
+
+                competenceId = id;
+                selectedCompetenceId = id;
+                await OnSearch();
+            }
+            else
+            {
+                Console.WriteLine("||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||load experience");
+
+                await LoadingExperiences();
+            }
+        }
+        else
+        {
+            Console.WriteLine("||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||load experience");
+
+            await LoadingExperiences();
+        }
+
+
+        
+    }
+
+
+
+    private async Task<IEnumerable<Competence>> SearchCompetences(string searchText)
+    {
+        var allCompetences = await Cv.GetAllCompetencesAsync();
+        return allCompetences
+            .Where(c => c.name.Contains(searchText, StringComparison.OrdinalIgnoreCase));
     }
 
     private async Task LoadingExperiences()
@@ -115,7 +171,31 @@ else
         }
         Loading = true;
 
-        FullExperiences = await Cv.GetAllExperiencesAsync();
+        await FastLoadingExperiences();
         Loading = false;
+    }
+
+    private async Task LoadingCompetences()
+    {
+        allCompetences = await Cv.GetAllCompetencesAsync();
+    }
+
+    private async Task FastLoadingExperiences()
+    {
+        FullExperiences = await Cv.GetAllExperiencesAsync();
+    }
+
+    private async Task OnSearch()
+    {
+        if (selectedCompetenceId.HasValue)
+        {
+            FullExperiences = await Cv.GetExperiencesByCompetence(selectedCompetenceId.Value);
+        }
+    }
+
+
+    private async Task Clear()
+    {
+        await FastLoadingExperiences();
     }
 }
